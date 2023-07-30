@@ -9,7 +9,7 @@ var grades = {
   "F": 0,
 };
 
-var courses = {
+Map<String, List<CourseModel>> courses = {
   "1": [
     CourseModel(load: 1, name: "GS 101"),
     CourseModel(load: 2, name: "GS 105"),
@@ -72,7 +72,7 @@ var courses = {
     CourseModel(load: 2, name: "ELE 344"),
     CourseModel(load: 2, name: "ELE 342"),
     CourseModel(load: 2, name: "ECE 322"),
-    CourseModel(load: 2, name: "ELE 314"),
+    CourseModel(load: 1, name: "ELE 314"),
     CourseModel(load: 3, name: "ECE 334")
   ],
   "4": [
@@ -86,4 +86,5 @@ var courses = {
     CourseModel(load: 3, name: "ECE 405"),
     CourseModel(load: 6, name: "IT"),
   ],
+  // "5": [],
 };
