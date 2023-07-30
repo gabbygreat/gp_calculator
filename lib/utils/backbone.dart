@@ -86,5 +86,5 @@ Map<String, List<CourseModel>> courses = {
     CourseModel(load: 3, name: "ECE 405"),
     CourseModel(load: 6, name: "IT"),
   ],
-  // "5": [],
+  "5": [],
 };

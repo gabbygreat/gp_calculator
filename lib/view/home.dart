@@ -16,7 +16,8 @@ class _HomeScreenState extends State<HomeScreen>
   void initState() {
     super.initState();
 
-    groupedCourses = courses.cast();
+    groupedCourses = Map.from(courses);
+    groupedCourses.remove('5');
   }
 
   void calculateGP() {
@@ -90,25 +91,24 @@ class _HomeScreenState extends State<HomeScreen>
               ),
               ListView.separated(
                 shrinkWrap: true,
-                itemCount: groupedCourses.length + 2,
+                itemCount: courses.length,
                 separatorBuilder: (context, index) => const Divider(),
-                itemBuilder: (context, index) => ListTile(
-                  title: Builder(builder: (context) {
-                    var text = 'Year ${index + 1}';
-                    if ((groupedCourses.length + 1) == index) {
-                      text = 'Carry Over';
-                    }
-                    return Text(text);
-                  }),
-                  onTap: () {
-                    Navigator.of(context).pop();
-                    if ((groupedCourses.length + 1) == index) {
-                      askName('5');
-                    } else {
-                      askName('${index + 1}');
-                    }
-                  },
-                ),
+                itemBuilder: (context, index) {
+                  var courseYear = courses.keys.toList()[index];
+                  return ListTile(
+                    title: Builder(builder: (context) {
+                      var text = 'Year $courseYear';
+                      if (courseYear == '5') {
+                        text = 'Carry Over';
+                      }
+                      return Text(text);
+                    }),
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      askName(courseYear);
+                    },
+                  );
+                },
               ),
               const SizedBox(
                 height: 40,
