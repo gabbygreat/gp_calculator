@@ -298,7 +298,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   Text(
                                     text,
                                   ),
-                                  if (courseYear != '1')
+                                  if (groupedCourses.length != 1)
                                     IconButton(
                                       tooltip: 'Remove $text',
                                       onPressed: () {
