@@ -229,7 +229,14 @@ class _HomeScreenState extends State<HomeScreen>
           children: [
             OutlinedButton(
               onPressed: calculateGP,
-              child: const Text('Calculate'),
+              child: const Text(
+                'Calculate',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
             ),
             const SizedBox(
               width: 30,
