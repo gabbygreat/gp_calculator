@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen>
 
     groupedCourses = Map.from(courses);
     groupedCourses.remove('5');
+    groupedCourses.remove('6');
   }
 
   void calculateGP() {
@@ -48,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen>
               const SnackBar(
                 duration: Duration(milliseconds: 800),
                 content: Text(
-                  'Enter the grade for all courses! 🥸',
+                  'Enter the grade for all courses! 😤',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -98,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen>
                   return ListTile(
                     title: Builder(builder: (context) {
                       var text = 'Year $courseYear';
-                      if (courseYear == '5') {
+                      if (courseYear == '6') {
                         text = 'Carry Over';
                       }
                       return Text(text);
@@ -213,16 +214,16 @@ class _HomeScreenState extends State<HomeScreen>
         ),
         backgroundColor: Colors.blue,
       ),
-      floatingActionButton: groupedCourses.length == 5
-          ? null
-          : FloatingActionButton(
-              onPressed: openYearList,
-              child: const Icon(
-                Icons.add,
-              ),
-            ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: openYearList,
+        child: const Icon(
+          Icons.add,
+        ),
+      ),
       bottomNavigationBar: Container(
-        height: 120,
+        padding: const EdgeInsets.symmetric(
+          vertical: 10,
+        ),
         color: Colors.blue,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -287,7 +288,7 @@ class _HomeScreenState extends State<HomeScreen>
                             ),
                             child: Builder(builder: (context) {
                               var text = 'Year $courseYear';
-                              if (courseYear == '5') {
+                              if (courseYear == '6') {
                                 text = 'Carry Over';
                               }
                               return Row(
