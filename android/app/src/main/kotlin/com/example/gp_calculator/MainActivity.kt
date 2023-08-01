@@ -1,4 +1,4 @@
-package com.example.gp_calculator
+package com.pycify.gp_calculator
 
 import io.flutter.embedding.android.FlutterActivity
 
